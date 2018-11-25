@@ -22,7 +22,7 @@
 ## Entity classes:（实体类别）
 手机APP应用
 
-Map processes:
+## Map processes:
 
 
 ## Exception flows:（异常流）
@@ -44,12 +44,6 @@ Map processes:
 ## Outcome expectation：
 APP上线初期，通过对部分使用者的体验评价再面向整个市场推出使用，到后期全面广泛应用，不断积攒用户。发展到一定阶段，APP会接手广告业务获利，最终扎根市场，开启用户与企业双赢模式。
 
-## Consumption expectation:（消费预期）
-
-## Utillzation expectation:（使用预期）
-1.
-2.
-3.
 
 ## Evaluation plan:（评估方案）
 1. 用户：新增用户、活跃用户、使用时长、留存率、终端属性（设备型号、网络和运营商地域分布）
