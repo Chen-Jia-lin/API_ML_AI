@@ -23,11 +23,12 @@
 做一个让你不再苦恼吃食的小程序——放心食 
 
 ## 目标：
-前期目标：
+- 前期目标：
 1. 拍下任何美食，得出是何种菜品，计算出食物卡路里。
 2. 拍下果蔬，判断是何种果蔬。
 3. 输入菜品名称，列出菜品的详细制作过程。提前预算合成一道菜之后的卡路里。
-后期目标：（目前不做）
+
+- 后期目标：（目前不做）
 1. 拍下食材，了解食物的新鲜程度，并设有提醒用户及时食用功能。
 2. 用户在厨房或超市里拍下任何食材的照片，给你量身定制的食谱建议。
 3. 拍下食物计算出营养成分（碳水化合物、蛋白质、脂肪、纤维素、糖分）； 识别菜品计算价钱
@@ -90,7 +91,54 @@
 * 请求方法：POST
 ```
 代码示例：
+import requests
+import json
+import base64
+import urllib
+from aip import AipImageClassify
 
+def get_access_token():
+     #这里添上自己的app数据就ok
+     APP_ID = 'xxx'
+     API_KEY = 'xxx'
+     SECRET_KEY = 'xxx'
+
+     url = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=%s&client_secret=%s' % (API_KEY, SECRET_KEY)
+     response = requests.post(url)
+
+     access_token = response.content.decode('utf-8')
+     access_token = json.loads(access_token)
+
+     access_token = str(access_token['access_token'])
+
+     return access_token
+
+def get_file_content(filePath):
+     with open(filePath,'rb') as fp:
+          return fp.read()
+
+def get_recognization(access_token):
+     host = 'https://aip.baidubce.com/rest/2.0/image-classify/v2/dish?access_token=' + access_token
+     header = {'Content-Type' : 'appliapplication/x-www-form-urlencodedcation/x'}
+     
+     #这里改成自己的文件路径
+     image = get_file_content('/home/pi/pythoncode/download.jpg')
+     image = base64.b64encode(image)
+     body = {'image' : image, 'top_num' : 1}
+     body = urllib.parse.urlencode(body)
+
+     response = requests.post(host,data=body,headers=header)
+     response = json.loads(response.text)
+     name = response['result'][0]['name']
+
+     return name     
+def main():
+     at = get_access_token()
+     recognization = get_recognization(at)
+     print(recognization)
+     
+if __name__ == '__main__':
+     main()
 ```
 
 细粒度图像识别—果蔬类食材识别
