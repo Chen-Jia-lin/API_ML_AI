@@ -69,7 +69,7 @@
 2. 产品信息结构图
 <img src='images/放心食信息结构图.png'>
 3. 产品流程图
-<img src='images/未命名文件.png'>
+<img src='images/未命名文件.jpg'>
 4. 产品结构图
 <img src='images/放心食产品结构图.png'>
 
