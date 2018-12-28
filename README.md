@@ -62,6 +62,7 @@
 
 ## （十）使用者交互与设计（axure产品原型）
 ### [原型文档下载区](https://github.com/Chen-Jia-lin/product-module)
+## [原型文档交互展示](https://github.com/Chen-Jia-lin/product-module)
 1. 登录/授权页面
 <img src='images/登录_授权页面.png'>
 2. 拍照模块
