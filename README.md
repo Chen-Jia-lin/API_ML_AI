@@ -134,12 +134,6 @@ if __name__ == '__main__':
 ```
 * 输出
 ```
-HTTP/1.1 200 OK
-x-bce-request-id: 73c4e74c-3101-4a00-bf44-fe246959c05e
-Cache-Control: no-cache
-Server: BWS
-Date: Tue, 18 Oct 2016 02:21:01 GMT
-Content-Type: application/json;charset=UTF-8
 {
 	"log_id": 7357081719365269362,
 	"result_num": 5,
