@@ -80,6 +80,7 @@
 * 接口描述：该请求用于菜品识别。即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片的菜品名称、卡路里信息、置信度。
 * 接口地址：https://aip.baidubce.com/rest/2.0/image-classify/v2/dish
 * 请求方法：POST
+* 输入
 ```
 代码示例：
 import requests
@@ -130,6 +131,55 @@ def main():
      
 if __name__ == '__main__':
      main()
+```
+* 输出
+```
+HTTP/1.1 200 OK
+x-bce-request-id: 73c4e74c-3101-4a00-bf44-fe246959c05e
+Cache-Control: no-cache
+Server: BWS
+Date: Tue, 18 Oct 2016 02:21:01 GMT
+Content-Type: application/json;charset=UTF-8
+{
+	"log_id": 7357081719365269362,
+	"result_num": 5,
+	"result": [
+	{
+		"calorie": "119",
+		"has_calorie": true,
+		"name": "酸汤鱼",
+		"probability": "0.396031"
+		"baike_info": {
+			"baike_url": "http://baike.baidu.com/item/%E9%85%B8%E6%B1%A4%E9%B1%BC/1754055",
+			"description": "酸汤鱼，是黔桂湘交界地区的一道侗族名菜，与侗族相邻的苗、水、瑶等少数民族也有相似菜肴，但其中以贵州侗族酸汤鱼最为有名，据考证此菜肴最早源于黎平县雷洞镇牙双一带。制作原料主要有鱼肉、酸汤、山仓子等香料。成菜后，略带酸味、幽香沁人、鲜嫩爽口开胃，是贵州“黔系”菜肴的代表作之一。这道菜通常先自制酸汤，之后将活鱼去掉内脏，入酸汤煮制。"
+		}
+	},
+	{
+		"calorie": "38",
+		"has_calorie": true,
+		"name": "原味黑鱼煲",
+		"probability": "0.265432",
+
+	},
+	{
+		"calorie": "144",
+		"has_calorie": true,
+		"name": "椒鱼片",
+		"probability": "0.0998993"
+	},
+	{
+		"calorie": "98",
+		"has_calorie": true,
+		"name": "酸菜鱼",
+		"probability": "0.0701917"
+	},
+	{
+		"calorie": "257.65",
+		"has_calorie": true,
+		"name": "柠檬鱼",
+		"probability": "0.0471465"
+	}]
+}
 ```
 - 百度菜品识别测试结果
 1. 单一菜品:输入一张美食图片，都是输出五个置信度最高的结果。
