@@ -278,3 +278,6 @@ if content:
 ## 结果预期：
 上线初期，通过对部分使用者的体验评价再面向整个市场推出使用，到后期全面广泛应用，不断积攒用户。发展到一定阶段，小程序会接手广告业务获利，最终扎根市场，开启用户与企业双赢模式。
 
+ ## 清单
+1. [原型文档下载区](https://github.com/Chen-Jia-lin/product-module)
+2. [原型文档交互展示](https://chen-jia-lin.github.io/product/index.html)
